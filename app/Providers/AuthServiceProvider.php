@@ -30,6 +30,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        $permissionArray = [];
+
 
         // This check allows us to run composer installation etc before the db has been created
         if (Schema::hasTable(with(new Role())->getTable()) ) {

@@ -9,7 +9,8 @@ class Location extends Model
 {
     use Translatable;
     protected $translatable = ['name', 'comment'];
-    
+    protected $fillable = ['pre_warning_last_issued'];
+
     public function Sensor(){
     	return $this->belongsTo('App\Sensor');
     }
@@ -17,5 +18,5 @@ class Location extends Model
       public function Datapoint(){
     	return $this->hasMany('App\Datapoint');
     }
-  
+
 }

@@ -32,10 +32,10 @@ Route::prefix('v1')->namespace('Api')->group(function(){
 });
 
 /*Group data authentication */
-Route::group(['namespace'=>'Api','prefix'=>'v1','middleware'=>['auth:api']],function(){	
+Route::group(['namespace'=>'Api','prefix'=>'v1','middleware'=>['auth:api']],function(){
 	Route::post('sensors/{external_id}/datapoints','v1\SensorInfoController@createDatapoint');
-	Route::post('sensors/{external_id}','v1\SensorInfoController@updateSensor');	
-		
+	Route::post('sensors/{external_id}','v1\SensorInfoController@updateSensor');
+
 });
 
 
